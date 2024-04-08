@@ -62,3 +62,69 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Note privated Phân Quyền
+Cài đặt Package:
+
+
+
+shell
+composer require spatie/laravel-permission
+Chạy Migration:
+
+shell
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+php artisan migrate
+
+Tạo Roles và Permissions:
+shell
+php artisan tinker
+> use Spatie\Permission\Models\Role;
+> use Spatie\Permission\Models\Permission;
+
+> $role = Role::create(['name' => 'admin']);
+> $permission = Permission::create(['name' => 'edit articles']);
+
+
+Gán Permission cho Role:
+shell
+> $role->givePermissionTo($permission);
+Gán Role cho User:
+php
+$user = App\Models\User::find(1); // Giả sử 1 là ID của user.
+$user->assignRole('admin');
+Kiểm Tra Quyền trong Controller:
+php
+public function update($id)
+{
+    $article = Article::findOrFail($id);
+
+    if (auth()->user()->can('edit articles')) {
+        // Thực hiện cập nhật bài viết
+    } else {
+        // Hiển thị thông báo lỗi hoặc chuyển hướng 
+    }
+}
+
+
+
+
+
+
+Kiểm Tra Quyền trong Blade:
+blade
+@role('admin')
+    <!-- Chỉ admin mới có thể nhìn thấy nội dung này -->
+    <div>
+        ...
+    </div>
+@endrole
+
+@can('edit articles')
+    <!-- Hiển thị nút chỉnh sửa cho những người dùng có quyền sửa bài viết -->
+    <button>Edit Article</button>
+@endcan
+
+
+Với ví dụ này, bạn đã có một cơ bản về cách cài đặt và sử dụng package spatie/laravel-permission để quản lý phân quyền trong Laravel.
