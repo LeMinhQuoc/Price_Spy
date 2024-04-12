@@ -126,6 +126,12 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
+
+                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                
+            
+                @include('home_page');
+                </div>
             </div>
         </div>
     </body>
