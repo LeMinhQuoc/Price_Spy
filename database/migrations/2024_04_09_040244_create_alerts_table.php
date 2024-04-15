@@ -15,6 +15,11 @@ class CreateAlertsTable extends Migration
     {
         Schema::create('alerts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('p_id')->references('id')->on('product');
+            $table->foreignId('u_id')->references('id')->on('users');
+            $table->string('alert_type');
+            $table->boolean('IsActive');
+            $table->dateTime('last_sent');
             $table->timestamps();
         });
     }

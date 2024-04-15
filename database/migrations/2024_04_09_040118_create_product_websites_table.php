@@ -15,6 +15,10 @@ class CreateProductWebsitesTable extends Migration
     {
         Schema::create('product_websites', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('p_id')->references('id')->on('product');
+            $table->foreignId('web_id')->references('id')->on('websites');
+            $table->integer('last_price');
+            $table->dateTime('last_check');
             $table->timestamps();
         });
     }

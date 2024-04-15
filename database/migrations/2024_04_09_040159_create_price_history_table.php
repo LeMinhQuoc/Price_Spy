@@ -15,6 +15,9 @@ class CreatePriceHistoryTable extends Migration
     {
         Schema::create('price_history', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('p-w_id')->references('id')->on('product_websites');
+            $table->integer('detec_price');
+            $table->datetime('detec_date');
             $table->timestamps();
         });
     }
