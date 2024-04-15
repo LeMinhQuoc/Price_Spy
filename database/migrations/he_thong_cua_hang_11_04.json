@@ -1,0 +1,85 @@
+{
+    "cuahang": [
+        {
+            "shop_name": "Chi nhánh Mã Lò",
+            "province": "Hồ Chí Minh",
+            "district": "Bình Tân",
+            "address": "198A Mã Lò, Bình Trị Đông A, Q. Bình Tân, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7839.164935414937!2d106.60432!3d10.766627!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d26f7db90e9%3A0xa74a6f76cfb536fb!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703230497701!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "Chi nhánh Nguyễn Thị Thập",
+            "province": "Hồ Chí Minh",
+            "district": "Quận 7",
+            "address": "388 - 390 Nguyễn Thị Thập, Tân Phong, Quận 7, Thành phố Hồ Chí Minh\n",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7839.89255545499!2d106.71048500000002!3d10.738624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fbea516b1fb%3A0xc65069df14754985!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703230618300!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World TL10",
+            "province": "Hồ Chí Minh",
+            "district": "Bình Tân",
+            "address": "1613 TL10, Tân Tạo A, Bình Tân, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d250859.75616115963!2d106.579596!3d10.758843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d6f4cf378eb%3A0x1b6ce6b7f6ad65!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703230728120!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World Cộng Hòa",
+            "province": "Hồ Chí Minh",
+            "district": "Tân Bình",
+            "address": "167 Đ. Cộng Hòa, Phường 12, Tân Bình, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62706.02446153978!2d106.647989!3d10.801620000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529cd236d4471%3A0x96a4069fd5966a4c!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703230785989!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World Trần Phú",
+            "province": "Hồ Chí Minh",
+            "district": "Quận 5",
+            "address": "350 Trần Phú, Phường 7, Quận 5, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62716.067717453654!2d106.669397!3d10.753415!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f36c9916083%3A0x40136eb0a74217c3!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703230842782!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World Quang Trung",
+            "province": "Hồ Chí Minh",
+            "district": "Gò Vấp",
+            "address": "509 Quang Trung, Phường 10, Gò Vấp, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62699.53834677285!2d106.66684!3d10.832639!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175291b5ca1b44b%3A0xedcbbdc3d07be4b3!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703230889262!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World Hậu Giang",
+            "province": "Hồ Chí Minh",
+            "district": "Quận 6",
+            "address": "393 Hậu Giang, Phường 11, Quận 6, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886899",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7839.629894971575!2d106.638698!3d10.748741!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e7d7cccd361%3A0x23cf15f3fc35f113!2zMzkzIMSQLiBI4bqtdSBHaWFuZywgUGjGsOG7nW5nIDExLCBRdeG6rW4gNiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIDcwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1703230937560!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World Mai Anh Đào",
+            "province": "Lâm Đồng",
+            "district": "Thành Phố Đà Lạt",
+            "address": "106A Mai Anh Đào, Phường 8, Thành Phố Đà Lạt",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886900",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7805.905858360251!2d108.45121000000002!3d11.977759!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112bbd8ba663b%3A0xe1985c78f41a5900!2sLadalat%20Hotel!5e0!3m2!1svi!2sus!4v1703231025437!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        },
+        {
+            "shop_name": "AB Beauty World Nguyễn Trãi",
+            "province": "Hồ Chí Minh",
+            "district": "Quận 5",
+            "address": "99 Đ. Nguyễn Trãi, Phường 02, Quận 5, Thành phố Hồ Chí Minh",
+            "time": "8h00 - 22h00 (kể cả CN và ngày lễ)",
+            "phone": "1900886900",
+            "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62715.06715724322!2d106.680434!3d10.758227!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f63bdca44cf%3A0xc9c9802dfc48d730!2sAB%20Beauty%20World!5e0!3m2!1svi!2sus!4v1703231073492!5m2!1svi!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+        }
+    ]
+}

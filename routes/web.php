@@ -24,3 +24,6 @@ Route::get('/home', function () {
 Route::get('/p_page',function(){
     return view('pyramic_page');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
