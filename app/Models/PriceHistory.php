@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class PriceHistory extends Model
 {
-    protected $primaryKey = 'PriceHistoryID';
-
-    protected $fillable = ['ProductWebsiteID', 'DetectedPrice', 'DateDetected'];
-
-    public function productWebsite()
+    protected $primaryKey = 'id';
+    protected $fillable = ['p-w_id', 'detec_price', 'detec_date'];
+    /*public function productWebsite()
     {
         return $this->belongsTo(ProductWebsite::class, 'ProductWebsiteID');
-    }
+    } */
 }

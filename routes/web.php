@@ -27,3 +27,7 @@ Route::get('/p_page',function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::post('/products', [App\Http\Controllers\ProductController::class, 'store'])->name('store_products');
+Route::get('/products/add', [App\Http\Controllers\ProductController::class, 'addform'])->name('addform');
+Route::get('/products/detail', [App\Http\Controllers\ProductController::class, 'products'])->name('productsDetail');

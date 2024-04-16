@@ -123,21 +123,21 @@ td{
   <nav class="sidebar card py-2 mb-4">
 <ul class="nav flex-column" id="nav_accordion">
 	<li class="nav-item home_option" >
-		<a class="nav-link" href="#"> Home </a>
+		<a class="nav-link" href="{{ route('products') }}"> Home </a>
 	</li>
 	<li class="nav-item has-submenu psubmenu">
 		<a class="nav-link" href="#"> Dashboard </a>
-		<ul class="submenu collapse sub_option">
-			<li><a class="nav-link" href="#">My Product </a></li>
-			<li><a class="nav-link" href="#">Add product </a></li>
+		<ul class="submenu collapse product_menu sub_option">
+			<li><a class="nav-link" href="{{ route('productsDetail') }}">My Product </a></li>
+			<li><a class="nav-link" href="{{ route('addform') }}">Add product </a></li>
 			<li><a class="nav-link" href="#">Import </a> </li>
 		</ul>
 	</li>
 	<li class="nav-item has-submenu psubmenu">
 		<a class="nav-link" href="#"> Product Data  </a>
 		<ul class="submenu collapse sub_option">
-      <li><a class="nav-link" href="#">My Product </a></li>
-			<li><a class="nav-link" href="#">Add product </a></li>
+      <li><a class="nav-link" href="{{ route('productsDetail') }}">My Product </a></li>
+			<li><a class="nav-link" href="{{ route('addform') }}">Add product </a></li>
 			<li><a class="nav-link" href="#">Import </a> </li>
 		</ul>
 	</li>
@@ -159,6 +159,13 @@ td{
         <button class="add-product-button btn btn-secondary">Account Infor</button>
       </div>
     </div>
+    <?php
+    
+  
+    
+    
+    if (isset($products)) { ?>
+
     <table>
       <thead>
         <tr>
@@ -171,9 +178,11 @@ td{
         </tr>
       </thead>
       <tbody>
+
+      @foreach($products as $product)
         <tr>
           <td><input type="checkbox"></td>
-          <td>Product 1</td>
+          <td>{{$product->name}}</td>
           <td>$10.00 - $100.00</td>
           <td>2022-01-01</td>
           <td>Weekly</td>
@@ -181,62 +190,22 @@ td{
             <button class="add-product-button">Edit</button>
           </td>
         </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Product 1</td>
-          <td>$10.00 - $100.00</td>
-          <td>2022-01-01</td>
-          <td>Weekly</td>
-          <td>
-            <button class="add-product-button">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Product 1</td>
-          <td>$10.00 - $100.00</td>
-          <td>2022-01-01</td>
-          <td>Weekly</td>
-          <td>
-            <button class="add-product-button">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Product 1</td>
-          <td>$10.00 - $100.00</td>
-          <td>2022-01-01</td>
-          <td>Weekly</td>
-          <td>
-            <button class="add-product-button">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Product 1</td>
-          <td>$10.00 - $100.00</td>
-          <td>2022-01-01</td>
-          <td>Weekly</td>
-          <td>
-            <button class="add-product-button">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Product 1</td>
-          <td>$10.00 - $100.00</td>
-          <td>2022-01-01</td>
-          <td>Weekly</td>
-          <td>
-            <button class="add-product-button">Edit</button>
-          </td>
-        </tr>
+        @endforeach
+        
+      
+        
+        
       </tbody>
     </table>
+<?php } elseif(isset($is_add)) {?>
+   @include('products/form_add_product')
+<?php } elseif(isset($product_detail)) {?>
+   @include('products/product')
+<?php }else{}?>
   </div>
 </body>
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
+  document.addEventListener("DOMContentLoaded", function(){
   document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
 
     element.addEventListener('click', function (e) {
@@ -261,5 +230,7 @@ td{
     }); 
   }) 
 });
+
+
 </script>
 </html>

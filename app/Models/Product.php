@@ -8,21 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
    
-    protected $primaryKey = 'ProductID';
+    protected $primaryKey = 'id';
 
-    protected $fillable = ['ProductName', 'ProductCode', 'SKU', 'DateAdded', 'IsActive'];
+    protected $fillable = ['name', 'sku', 'barcode', 'create_at', 'update_at'];
 
+
+
+    /*
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'ProductCategories', 'ProductID', 'CategoryID');
+        return $this->belongsToMany(Category::class, 'ProductCategories', 'id', 'category_id');
     }
     public function websites()
     {
-        return $this->belongsToMany(Website::class, 'ProductWebsites', 'ProductID', 'WebsiteID')
+        return $this->belongsToMany(Website::class, 'ProductWebsites', 'id', 'WebsiteID')
                     ->withPivot('LatestPrice', 'LastChecked');
     }
     public function alerts()
     {
-        return $this->hasMany(Alert::class, 'ProductID');
-    }
+        return $this->hasMany(Alert::class, 'id');
+    }*/
 }
