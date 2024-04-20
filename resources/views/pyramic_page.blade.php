@@ -10,25 +10,32 @@ $products = [
 ];
 
 // Kiểm tra xem nút nào được nhấn
-$display = 'users';?>
+$display = 'users'; ?>
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <title>Trang Web Động với Blade</title>
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             padding: 10px;
         }
+
         th {
             background-color: #ddd;
         }
     </style>
 </head>
+
 <body>
 
     <form action="{{ url('p_page') }}" method="get">
@@ -69,4 +76,5 @@ $display = 'users';?>
     @endif
 
 </body>
+
 </html>

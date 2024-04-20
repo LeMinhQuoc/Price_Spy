@@ -9,5 +9,5 @@ class ProductCategories extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-    protected $fillable = ['p_id', 'c_id','create_at', 'update_at'];
+    protected $fillable = ['p_id', 'cate_id','create_at', 'update_at'];
 }

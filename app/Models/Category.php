@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $primaryKey = 'CategoryID';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name'];
 
-    protected $fillable = ['CategoryName'];
-
+    /*
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'ProductCategories', 'CategoryID', 'ProductID');
-    }
+        return $this->belongsToMany(Product::class, 'ProductCategories', 'id', 'id');
+    }*/
 }

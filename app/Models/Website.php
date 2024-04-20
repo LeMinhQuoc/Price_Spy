@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Website extends Model
 {
-    use HasFactory;
+    protected $primaryKey = 'id';
+
+    protected $fillable = ['web_name', 'url'];
+
+   /* public function products()
+    {
+        return $this->belongsToMany(Product::class, 'ProductWebsites', 'WebsiteID', 'ProductID')
+                    ->withPivot('LatestPrice', 'LastChecked');
+    }*/
 }
