@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\ProductCategories;
 use App\Models\ProductWebsite;
 use App\Models\Website;
+use App\Models\DetecLink;
+use App\Http\Controllers\WebsiteController;
 use Goutte\Client;
 use DOMDocument;
 use DOMXPath;
@@ -70,15 +72,37 @@ class ProductController extends Controller
         // đẩy category
 
         // tạo bản ghi website
+        /* $web = $request->validate([
+                'web_id' => 'required|max:255'
+            ]);
+            $web['p_id'] = $p_id;
+            $web['last_price'] = '0';
+            $web['last_check'] = $currentTimestamp;
+            $web['created_at'] = $currentTimestamp;
+            $web['updated_at'] = $currentTimestamp;
+            $website = ProductWebsite::create($web); */
+
         $web = $request->validate([
-            'web_id' => 'required|max:255'
+            'web' => 'required|max:255'
         ]);
-        $web['p_id'] = $p_id;
-        $web['last_price'] = '0';
-        $web['last_check'] = $currentTimestamp;
-        $web['created_at'] = $currentTimestamp;
-        $web['updated_at'] = $currentTimestamp;
-        $website = ProductWebsite::create($web);
+        $webController = new WebsiteController;
+        $detecter = $webController->detecLink($web);
+
+        $detecwebs = DetecLink::all();
+        if ($detecter) {
+            foreach ($detecwebs as $lweb) {
+                if ($detecter == $lweb) {
+                }
+            }
+        } else {
+
+            var_dump("chưa hỗ trợ");
+            die();
+        }
+
+
+
+
 
         return redirect('/products')->with('success', 'Sản phẩm đã được lưu.');
     }
@@ -109,94 +133,48 @@ class ProductController extends Controller
 
     private function abScanner($link)
     {
-        $client = new Client();
-        try {
-            $crawler = $client->request('GET', $link);
-            $price = $crawler->filter('span.pro-price');
-            if ($price->count() > 0) {
-                // Chỉ lấy văn bản nếu có phần tử được tìm thấy
-                return $this->cTN($price->text()) * 1000;
-            } else {
-                // Trả về giá trị ngầm định nếu không có phần tử nào
-                return 0;
-            }
-        } catch (Exception $e) {
-            return 0;
-        }
+        return $this->generalScanner($link, 'GET', 'span.pro-price', null, 1000);
     }
-
-
-
-    // Scanner của từng thương hiệu
     private function hasakiScanner($value)
     {
-        $client = new Client();
-        try {
-            $crawler = $client->request('GET', $value);
-            $finalPrices = $crawler->filter('#product_final_price');
-            // Kiểm tra xem selector có trả về kết quả không
-            if ($finalPrices->count() > 0) {
-                $finalPrice = $finalPrices->attr('value');
-                return $this->cTN($finalPrice);
-            } else {
-                return 0;
-            }
-        } catch (Exception $e) {
-            return 0;
-        }
+        return $this->generalScanner($value, 'GET', '#product_final_price', 'value');
     }
-
 
     private function guScanner($value)
     {
-        $dom = new DOMDocument;
-        libxml_use_internal_errors(true);
-        try {
-            $dom->loadHTML(file_get_contents($value));
-        } catch (Exception $e) {
-            return 0;
-        }
-        libxml_clear_errors();
-
-        $xpath = new DOMXPath($dom);
-        $prices = $xpath->query("//span[@class='price']");
-        // Kiểm tra xem có item nào được tìm thấy không
-        if ($prices->length > 0) {
-            $price = $prices->item(0)->nodeValue;
-            return $this->cTN($price) * 1000;
-        } else {
-            return 0;
-        }
+        return $this->domScanner($value, 'GET', "//span[@class='price']", null, 1000);
     }
+
     private function tgScanner($value)
     {
-        $dom = new DOMDocument;
-
-        libxml_use_internal_errors(true);
-        try {
-            $dom->loadHTML(file_get_contents($value));
-        } catch (Exception $e) {
-            return 0;
-        }
-        libxml_clear_errors();
-
-        $xpath = new DOMXPath($dom);
-        $prices = $xpath->query("//div[@class='page-product-info-newprice']");
-
-        // Kiểm tra xem có item nào được tìm thấy không
-        if ($prices->length > 0) {
-            $price = $prices->item(0)->nodeValue;
-            return $this->cTN($price) * 1000;
-        } else {
-            return 0;
-        }
+        return $this->domScanner($value, 'GET', "//div[@class='page-product-info-newprice']", null, 1000);
     }
-
 
     private function ltScanner($value)
     {
-        $dom = new DOMDocument;
+        return $this->domScanner($value, 'GET', "//span[@class='current-price ProductPrice']", null, 1000);
+    }
+    private function generalScanner($value, $method, $selector, $attribute = null, $multiplier = 1)
+    {
 
+        $client = new Client();
+        try {
+            $crawler = $client->request('GET', $value);
+            $elements = $crawler->filter($selector);
+            if ($elements->count() > 0) {
+                $elementValue = ($attribute !== null) ? $elements->attr($attribute) : $elements->text();
+                return $this->cTN($elementValue) * $multiplier;
+            } else {
+                return 0;
+            }
+        } catch (Exception $e) {
+            return 0;
+        }
+    }
+
+    private function domScanner($value, $method, $selector, $attribute = null, $multiplier = 1)
+    {
+        $dom = new DOMDocument;
         libxml_use_internal_errors(true);
         try {
             $dom->loadHTML(file_get_contents($value));
@@ -204,19 +182,15 @@ class ProductController extends Controller
             return 0;
         }
         libxml_clear_errors();
-
         $xpath = new DOMXPath($dom);
-        $prices = $xpath->query("//span[@class='current-price ProductPrice']");
-
-        // Kiểm tra xem có item nào được tìm thấy không
+        $prices = $xpath->query($selector);
         if ($prices->length > 0) {
             $price = $prices->item(0)->nodeValue;
-            return $this->cTN($price) * 1000;
+            return $this->cTN($price) * $multiplier;
         } else {
             return 0;
         }
     }
-
 
     // đưa giá từ chuỗi ký tự về dạng số
     private function cTN($input)

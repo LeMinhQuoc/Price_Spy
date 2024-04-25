@@ -13,4 +13,14 @@ class WebsiteController extends Controller
     return view('home_page',['web'=>$web]);
 }
 
+function detecLink($str) {
+    $websites = array("abbeautyworld", "hasaki", "lamthao", "guadian", "thegioiskinfood");
+    foreach ($websites as $website) {
+        if (strpos($str, $website) !== false) {
+            return  $website;
+        }
+    }
+    return false;
+}
+
 }
