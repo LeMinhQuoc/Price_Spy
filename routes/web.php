@@ -44,3 +44,7 @@ Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'inde
 
 
 Route::get('/website', [App\Http\Controllers\WebsiteController::class, 'index'])->name('website');
+
+
+// router test 
+Route::post('/test', [App\Http\Controllers\ProductController::class, 'test'])->name('test');

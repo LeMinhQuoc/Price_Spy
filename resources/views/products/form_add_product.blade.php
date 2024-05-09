@@ -29,7 +29,7 @@
         </select>
     </div>
     
-<!--
+
     <div>
         <select name="web_id">
         @foreach($webs as $web)
@@ -37,7 +37,7 @@
         @endforeach
         </select>
     </div>
--->
+
 
     <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
 </form>

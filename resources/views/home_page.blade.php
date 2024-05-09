@@ -148,7 +148,9 @@
 </head>
 
 <body>
+  <div>
   @include('left_sidebar_menu');
+  </div>
   <div class="main-container">
     <div class="product-container">
       <div class="header-title col-12 col-sm-12 col-md-10 col-lg-10">
@@ -169,8 +171,9 @@
       @include('category')
     <?php } elseif (isset($web)) { ?>
       @include('websites')
-    <?php } else {
-    } ?>
+    <?php } else { ?>
+      <table>Welcome homie!</table>
+    <?php } ?>
   </div>
 </body>
 <script>

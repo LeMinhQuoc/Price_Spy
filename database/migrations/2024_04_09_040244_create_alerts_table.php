@@ -15,7 +15,7 @@ class CreateAlertsTable extends Migration
     {
         Schema::create('alerts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('p_id')->references('id')->on('product');
+            $table->foreignId('p_id')->references('id')->on('products');
             $table->foreignId('u_id')->references('id')->on('users');
             $table->string('alert_type');
             $table->boolean('IsActive');

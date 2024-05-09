@@ -3,13 +3,12 @@
         <tr>
           <th>Select</th>
           <th>Product Name</th>
-          <th>SKU/th>
+          <th>SKU</th>
           <th>Barcode</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-
       @foreach($product_detail as $product)
         <tr>
           <td><input type="checkbox"></td>
